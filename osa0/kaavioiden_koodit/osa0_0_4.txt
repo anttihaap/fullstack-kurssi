@@ -1,0 +1,21 @@
+kayttaja->selain:
+note left of selain
+Käyttäjä kirjoittaa uuden muistiinpanon
+ja painaa "talleta"-nappia. Tämä aiheuttaa
+formin kautta POST-pyynnön /new_note .
+end note
+
+selain->palvelin: POST fullstack-exampleapp.herokuapp.com/new_note
+note right of selain
+POST:iin sisällytetään muistiinpanon nimi
+Form Datan kohtaan note
+end note
+
+palvelin->selain: status 302 (found), uudelleen ohjataan /notes
+
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/notes
+
+note right of selain
+Sivu latautuu uudelleen, eli tehdään samat kutsut kuin edellisessä
+kaaviossa.
+end note

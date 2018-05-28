@@ -1,0 +1,25 @@
+kayttaja->selain:
+note left of selain
+Käyttäjä kirjoittaa uuden muistiinpanon
+ja painaa "talleta"-nappia. spa.js on määritellyt,
+että "notes_form" on submit suorittaa spa.js-skriptissä
+määritellyn koodin pätkän.
+end note
+
+selain->selain: suoritetaan spa.js-skriptissä määritelty toiminnallisuus
+
+selain->selain: Lisätään uusi muistiinpano suoraan HTML javascriptillä.
+
+selain->palvelin: POST fullstack-exampleapp.herokuapp.com/new_note
+note right of selain
+POST:iin sisällytetään muistiinpanon nimi
+Form Datan kohtaan note
+end note
+
+palvelin->selain: status 201 (created), muistiinpano lisätty onnistuneesti palvelimelle
+
+note left of selain
+Sivua ei tarvitse uudelleen ladata, sillä
+spa.js lisäsi uuden muistiinpanon HTML-koodiin
+ja POSTasi uuden muistiinpanon palvelimelle.
+end note
